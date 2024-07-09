@@ -1,0 +1,187 @@
+.wrapper {
+  overflow-x: hidden;
+}
+.intro-header {
+  color: white;
+  background-color: #003b95;
+  padding: 45px 0 65px 0;
+  height: 200px;
+}
+
+/* TimPhong Container */
+.TimPhongContainer {
+  margin-top: -34px;
+}
+
+/* TimPhong */
+.TimPhong {
+  margin: 0 auto;
+  display: flex;
+  border-radius: 6px;
+  background-color: cornsilk;
+  width: fit-content;
+  padding: 8px 30px;
+}
+
+.TimPhong div {
+  padding: 3px;
+}
+
+.TimPhong div i {
+  padding-right: 7px;
+}
+
+/* CountRoom */
+.CountRoom {
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  width: 21rem;
+  text-align: center;
+  position: absolute;
+  left: -2rem;
+  margin-top: 8px;
+}
+
+.CountRoom p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0;
+}
+.CountRoom div {
+  padding-bottom: 10px;
+}
+
+.CountRoom button {
+  border: 1px solid gray;
+  border-radius: 2px;
+  margin: 0 2px;
+  background-color: white;
+  color: dodgerblue;
+}
+
+.CountRoom input {
+  text-align: center;
+}
+
+.CountRoom div input::-webkit-inner-spin-button,
+.CountRoom div input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  display: none;
+}
+
+/* CheckBox TimPhong */
+.checkBoxTimPhong {
+  margin-top: 10px;
+  display: flex;
+  padding-left: 5%;
+}
+
+.checkBoxTimPhong div {
+  padding: 5px;
+}
+
+.checkBoxTimPhong div label {
+  margin: 0;
+  font-weight: 400;
+  padding-left: 5px;
+}
+
+.TimKiemGanDay {
+  display: flex;
+  padding: 10px;
+  border-radius: 10px;
+}
+.TimKiemGanDay .TimKiemGanDayDetail {
+  display: grid;
+  align-items: center;
+  margin: 0 20px;
+}
+.TimKiemGanDay .slide-image {
+  cursor: pointer;
+  width: 135px;
+  height: 110px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+/* GoiY */
+.GoiY {
+  display: inline;
+  margin: 0 0 50px 0;
+}
+
+.GoiY h3 {
+  text-align: center;
+}
+
+/* DoiTacHotel */
+.DoiTacHotel h4 {
+  color: darkblue;
+  padding-top: 40px;
+}
+
+.DoiTacHotel h6 {
+  font-weight: 387;
+  color: dodgerblue;
+}
+
+.DoiTacHotel p {
+  font-weight: 377;
+  color: #003b95;
+  font-size: 17px;
+  padding-top: 10px;
+}
+
+.DoiTacHotel img {
+  width: 50%;
+}
+
+/* WhyBook */
+.WhyBook div ul {
+  list-style-type: none;
+  padding: 20px 0;
+}
+
+.WhyBook div ul li {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Sizing Lịch */
+::ng-deep .p-datepicker table td {
+  padding: 0.2rem !important;
+}
+
+::ng-deep .p-datepicker table td > span {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+::ng-deep .p-datepicker table {
+  font-size: 10pt;
+  margin: -0.143rem 0;
+}
+
+::ng-deep .p-datepicker .p-datepicker-header {
+  padding: 0.2rem;
+}
+
+/* Slide */
+.slide {
+  width: 130px;
+  height: 130px;
+  border-radius: 65px;
+  background-size: cover;
+  background-position: center;
+  margin: 40px;
+}

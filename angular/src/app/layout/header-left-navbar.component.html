@@ -1,0 +1,41 @@
+<!-- Code cũ ko dùng sidebar -->
+<!-- <ul class="navbar-nav">
+  <li class="nav-item d-none d-sm-inline-block">
+    <a class="nav-link" [routerLink]="['home']">
+      {{ "HomePage" | localize }}
+    </a>
+  </li>
+  <li class="nav-item d-none d-sm-inline-block">
+    <a class="nav-link" [routerLink]="['about']">
+      {{ "About" | localize }}
+    </a>
+  </li>
+</ul> -->
+
+<!-- Code mới -->
+<div class="row" style="list-style: none">
+  <div class="col-md-2 col-sm-2">
+    <a
+      style="color: white"
+      class="a1 nav-link"
+      href="javascript:;"
+      (click)="toggleSidebar()"
+    >
+      <!--code 3 gạch <i class="fas fa-bars"></i> -->
+    </a>
+  </div>
+  <!-- <div class="col-md-4 col-sm-3">
+    <a style="color: white" class="nav-link" [routerLink]="['home']">
+      {{ "Quản lý" | localize }}
+    </a>
+  </div> -->
+  <div class="m col-md-5 col-sm-5">
+    <a
+      style="color: white"
+      class="nav-link active"
+      aria-current="page"
+      [routerLink]="['trangchu']"
+      >{{ "Trang chủ" | localize }}</a
+    >
+  </div>
+</div>

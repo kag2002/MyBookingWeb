@@ -1,0 +1,246 @@
+<div class="container">
+  <div style="padding: 20px 7.5px">
+    <h4>Bạn vui lòng kiểm tra lại đặt chỗ</h4>
+    <p>Vui lòng xem lại chi tiết trước khi thanh toán</p>
+  </div>
+  <div class="row">
+    <div class="col-lg-7 mb-3">
+      <!-- Chi tiết phòng thời gian -->
+      <div class="PhongConTrongList">
+        <div class="PhongConTrongListItem card">
+          <div>
+            <h4>
+              {{ selectedloaiphong?.tenDonVi }}
+            </h4>
+            <hr />
+            <div class="row">
+              <!-- Ngày nhận -->
+              <div class="col-lg-6 col-sm-6 col-xs-12">
+                <h6 style="font-weight: bold">Ngày nhận</h6>
+                <input
+                  type="date"
+                  [value]="
+                    infoBooking?.ngayDat
+                      ? infoBooking?.ngayDat.format('YYYY-MM-DD')
+                      : ''
+                  "
+                />
+              </div>
+
+              <!-- Ngày trả -->
+              <div class="col-lg-6 col-sm-6 col-xs-12">
+                <h6 style="font-weight: bold">Ngày trả</h6>
+                <input
+                  type="date"
+                  [value]="
+                    infoBooking?.ngayTra
+                      ? infoBooking?.ngayTra.format('YYYY-MM-DD')
+                      : ''
+                  "
+                />
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-lg-12">
+              {{ selectedloaiphong?.tenLoaiPhong }} -
+              <i class="fa-solid fa-bed"></i>
+              {{ selectedloaiphong?.sucChuaPhong }}
+              người
+            </div>
+            <hr />
+            <div class="col-lg-12">
+              Tiện nghi: {{ selectedloaiphong?.tienNghi }}
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-lg-12">
+              <h6
+                style="color: #00a651; margin-top: 10px"
+                *ngIf="selectedloaiphong?.mienPhiHuyPhong"
+              >
+                Miễn phí hủy phòng
+              </h6>
+              <h6
+                style="color: orange; margin-top: 10px"
+                *ngIf="!selectedloaiphong?.mienPhiHuyPhong"
+              >
+                Không miễn phí hủy phòng
+              </h6>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <p><b>Mô tả : </b>{{ selectedloaiphong?.moTaPhong }}</p>
+            <br />
+          </div>
+        </div>
+        <br /><br />
+      </div>
+      <!-- End Chi tiết phòng thời gian -->
+
+      <!-- Card Chính sách -->
+      <div class="card XacNhanDatCho">
+        <h6 style="font-weight: bold">Chính sách khách sạn & phòng</h6>
+        <div class="row">
+          <div class="col-lg-12">
+            <p>{{ chinhsachchung?.chinhSachVePhong }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="card XacNhanDatCho">
+        <h6 style="font-weight: bold">Chính sách lưu trú</h6>
+        <div class="row">
+          <div class="col-lg-3"><i class="pi pi-sign-in"></i> Nhận phòng :</div>
+          <div class="col-lg-9">
+            <b>{{ chinhsachchung?.nhanPhong }}</b>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-lg-3"><i class="pi pi-sign-out"></i> Trả phòng :</div>
+          <div class="col-lg-9">
+            <b>{{ chinhsachchung?.traPhong }}</b>
+          </div>
+        </div>
+      </div>
+      <div class="card XacNhanDatCho">
+        <h6 style="font-weight: bold">Chi tiết giá</h6>
+        <div class="row">
+          <div class="col-lg-9">Tổng tiền :</div>
+          <div class="col-lg-3">
+            <h6 style="color: red">
+              {{
+                (infoRoom?.giaPhongTheoDem + infoRoom?.giaDichVuThem) *
+                  calculateNumberOfNights(
+                    infoBooking?.ngayDat,
+                    infoBooking?.ngayTra
+                  ) *
+                  (1 - infoRoom?.giamGia - infoRoom?.uuDaiDacBiet) *
+                  this.infoBooking.slPhong | number : "1.0-0"
+              }}
+              VNĐ
+            </h6>
+          </div>
+        </div>
+        <hr style="margin-top: 0" />
+        <div class="row">
+          <div class="col-lg-6">
+            Giá theo đêm: {{ infoRoom?.giaPhongTheoDem | number : "1.0-0" }} VNĐ
+          </div>
+          <div class="col-lg-6">
+            Tổng số đêm :
+            {{
+              calculateNumberOfNights(
+                infoBooking?.ngayDat,
+                infoBooking?.ngayTra
+              )
+            }}
+            đêm
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-lg-6">
+            Giá dịch vụ: {{ infoRoom?.giaDichVuThem | number : "1.0-0" }} VNĐ
+          </div>
+          <div class="col-lg-6">Số lượng phòng: {{ infoBooking?.slPhong }}</div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-lg-6">
+            Chiết khấu : {{ infoRoom?.giamGia * 100 }} %
+          </div>
+          <div class="col-lg-6">
+            Ưu đãi đặc biệt : {{ infoRoom?.uuDaiDacBiet * 100 }} %
+          </div>
+        </div>
+
+        <hr />
+      </div>
+
+      <!--End Card Chính sách -->
+
+      <a
+        href="/app/thongtinlienhestart/{{ id }}/{{ idloaiphong }}/{{
+          idloaiphong
+        }}#ThongTin"
+        (click)="addClientBookRoom()"
+        style="margin-right: 30px"
+        class="btnxacnhan btn"
+        >Xác nhận đặt trước</a
+      >
+      <a
+        *ngIf="showPreviewBtn"
+        href="/app/thongtinlienhestart/{{ id }}/{{ idloaiphong }}/{{
+          idloaiphong
+        }}#ThongTin"
+        (click)="Preview()"
+        class="btnpreview btn"
+        >Xem thông tin đặt phòng</a
+      >
+
+      <p-toast></p-toast>
+    </div>
+
+    <br /><br /><br />
+
+    <div class="col-lg-5 col-sm-12">
+      <!-- InforNguoiDat -->
+
+      <div class="card XacNhanDatCho">
+        <h6>Chi tiết người liên lạc</h6>
+        <hr />
+        <p>
+          Họ tên : <b>{{ infoClient?.hoTen }}</b>
+        </p>
+        <p>
+          Số điện thoại : <b>(+84) {{ infoClient?.sdt }}</b>
+        </p>
+      </div>
+      <div class="card XacNhanDatCho">
+        <h6>Chi tiết khách ở</h6>
+        <hr />
+        <p>
+          Tên khách : <b>{{ infoClient?.hoTen }}</b>
+        </p>
+
+        <p>
+          CCCD/Hộ chiếu : <b>{{ infoClient?.cccd }}</b>
+        </p>
+
+        <p>
+          Email : <b>{{ infoClient?.email }}</b>
+        </p>
+
+        <p>
+          Số điện thoại : <b>(+84) {{ infoClient?.sdt }}</b>
+        </p>
+
+        <p>
+          Yêu cầu đặc biệt : <b>{{ infoClient?.yeuCauDacBiet }}</b>
+        </p>
+      </div>
+
+      <!-- End InforNguoiDat -->
+    </div>
+  </div>
+</div>
+<div *ngIf="showInvoice" class="container card" id="ThongTin">
+  <div style="margin: 20px 20px 0 20px">
+    <i class="fa-solid fa-x close-button" (click)="closeInvoice()"></i>
+  </div>
+  <h2 style="text-align: center">Thông tin</h2>
+  <div style="margin: 20px" [innerHTML]="invoiceHtml"></div>
+  <img
+    style="width: 236px; display: block; margin-left: auto; margin-right: auto"
+    src="../../../assets/img/QRThanhToan.png"
+    alt=""
+  /><br />
+  <div>
+    Mọi thắc mắc vui lòng gửi đến email stayease.com hoặc điền vào form tại
+    trang chủ
+  </div>
+  <button (click)="downloadInvoice()" class="btn-download">Tải xuống</button
+  ><br />
+</div>

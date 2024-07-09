@@ -1,0 +1,38 @@
+.FormThongTinLienHe {
+  padding: 20px;
+  margin: 20px 0 40px 0;
+}
+.FormThongTinLienHe div input {
+  width: 98%;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+.ThongTinLienHe div {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.DangKyDatCho {
+  padding: 20px;
+}
+.PhongConTrong {
+  padding: 20px;
+}
+.PhongConTrongListItem {
+  padding: 16px 42px;
+}
+.GiaLoaiPhong {
+  font-size: 20px;
+  font-weight: 600;
+  color: red;
+  margin-top: 50px;
+}
+.YeuCauDacBiet {
+  padding: 20px;
+}
+.YeuCauDacBietRadio label {
+  margin: 0;
+}
+app-thongtinlienhe input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}

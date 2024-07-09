@@ -1,0 +1,90 @@
+.LocLoaiHinhCuChuItem {
+  list-style: none;
+}
+.LocLoaiHinhCuChuItem li {
+  margin-bottom: 2px;
+}
+.LocLoaiHinhCuChuItem li label {
+  margin-bottom: 0;
+  margin-left: 5px;
+  font-weight: 500;
+}
+.FormInputKhachSan div input {
+  width: 90%;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+
+.HangSao div label {
+  margin: 0;
+}
+.LoaiHinh div label {
+  margin: 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.FormInputLoaiPhong div input {
+  width: 90%;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+
+/* button tệp */
+.file-input-label {
+  margin-top: 20px;
+  display: inline-block;
+  width: fit-content;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.file-input-label input[type="file"] {
+  display: none;
+}
+
+.file-input-label:hover {
+  background-color: #0056b3;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.delete-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  color: brown;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: rgb(235, 221, 203);
+}
+
+.image-preview {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.ThemLoaiPhong {
+  margin: 50px 0;
+}

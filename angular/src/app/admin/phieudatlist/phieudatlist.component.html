@@ -1,0 +1,135 @@
+<div class="ThemLichDat container">
+  <br />
+  <div class="row">
+    <div class="col-lg-6" style="display: flex">
+      <form [formGroup]="formLocId" style="padding: 7.5px">
+        <div class="row flex">
+          <div>
+            <input
+              placeholder="Tìm theo mã phiếu đặt phòng"
+              type="number"
+              formControlName="id"
+              required
+              style="padding: 9px"
+            />
+            <br />
+          </div>
+          <p-button
+            style="display: contents"
+            [disabled]="!formLocId.valid"
+            (click)="filterid()"
+          >
+            <i class="pi pi-search"></i
+          ></p-button>
+        </div>
+        <small
+          style="color: red; z-index: 1"
+          *ngIf="!formLocId.get('id').valid && formLocId.get('id').touched"
+          >Vui lòng nhập mã phiếu đặt phòng
+        </small>
+      </form>
+
+      <form [formGroup]="formLoccccd" style="padding: 7.5px">
+        <div class="row flex">
+          <div>
+            <input
+              placeholder="Tìm theo số CCCD"
+              type="text"
+              formControlName="cccd"
+              required
+              style="padding: 9px"
+            />
+            <br />
+          </div>
+          <p-button
+            style="display: contents"
+            [disabled]="!formLoccccd.valid"
+            (click)="filtercccd()"
+          >
+            <i class="pi pi-search"></i
+          ></p-button>
+        </div>
+        <small
+          style="color: red; z-index: 1"
+          *ngIf="
+            !formLoccccd.get('cccd').valid && formLoccccd.get('cccd').touched
+          "
+          >Vui lòng nhập số cccd
+        </small>
+      </form>
+    </div>
+  </div>
+
+  <div class="row" style="justify-content: center">
+    <div class="col-lg-12">
+      <div class="card">
+        <p-table
+          [value]="listChiTietPhieuDat"
+          [paginator]="true"
+          [rows]="10"
+          [showCurrentPageReport]="true"
+          [tableStyle]="{ 'min-width': '50rem' }"
+          currentPageReportTemplate="Có tất cả {totalRecords} kết quả"
+          [rowsPerPageOptions]="[10, 25, 50]"
+          editMode="row"
+        >
+          <ng-template pTemplate="header">
+            <tr>
+              <th style="width: 5%">STT</th>
+              <th style="width: 25%">Họ tên</th>
+              <th style="width: 10%">SĐT</th>
+              <th style="width: 10%">CCCD</th>
+              <th style="width: 10%">Check in</th>
+              <th style="width: 10%">Check out</th>
+              <th style="width: 10%">Yêu cầu</th>
+              <th style="width: 10%">Đặt hộ</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-i="rowIndex" let-customer>
+            <tr>
+              <td>{{ i + 1 }}</td>
+
+              <td>{{ listChiTietPhieuDat[i].hoTen }}</td>
+              <td>{{ listChiTietPhieuDat[i].sdt }}</td>
+              <td>{{ listChiTietPhieuDat[i].cccd }}</td>
+              <td>
+                {{ listChiTietPhieuDat[i].ngayBatDau.format("DD/MM/YYYY") }}
+              </td>
+              <td>
+                {{ listChiTietPhieuDat[i].ngayHenTra.format("DD/MM/YYYY") }}
+              </td>
+              <td>{{ listChiTietPhieuDat[i].yeuCauDacBiet }}</td>
+              <td *ngIf="listChiTietPhieuDat[i].datHo !== 1">Đúng</td>
+              <td *ngIf="listChiTietPhieuDat[i].datHo === 1">Không</td>
+
+              <td>
+                <button
+                  label="Chi tiết"
+                  style="background-color: #3b82f6"
+                  [routerLink]="[
+                    '/app/updatephieudat',
+                    listChiTietPhieuDat[i]?.id
+                  ]"
+                >
+                  <i class="pi pi-pencil"></i> Duyệt
+                </button>
+              </td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="paginatorleft"> </ng-template>
+          <ng-template pTemplate="paginatorright"> </ng-template>
+        </p-table>
+      </div>
+      <div>
+        <p-button label="Tải lại" (click)="reload()"
+          ><i class="pi pi-replay"></i
+        ></p-button>
+      </div>
+      <br />
+    </div>
+
+    <!-- <pre>
+                    {{ FormTaoSinhVien.value | json }}
+                  </pre> -->
+  </div>
+</div>

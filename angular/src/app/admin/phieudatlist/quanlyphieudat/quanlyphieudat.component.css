@@ -1,0 +1,54 @@
+.PhieuInfor form div input {
+  width: 90%;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+.ThePhieuDat {
+  padding: 20px;
+}
+
+.tieudethongtin {
+  background-color: #5675fe;
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  width: fit-content;
+}
+
+i {
+  margin-left: 3px;
+}
+
+button {
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+    box-shadow 0.2s;
+  border-radius: 6px;
+  font-weight: bold;
+}
+.button-deny {
+  background-color: #ef4444;
+  transition: background-color 0.3s;
+}
+
+.button-deny:hover {
+  background-color: #d83b3b; /* Darker shade for deny button */
+}
+
+.button-accept {
+  background-color: #56a4fe;
+  transition: background-color 0.3s;
+}
+
+.button-accept:hover {
+  background-color: #4590e0; /* Darker shade for accept button */
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

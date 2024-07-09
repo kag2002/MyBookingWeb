@@ -1,0 +1,111 @@
+:root {
+  --main-color: dodgerblue;
+  --sub-color: #003b95;
+  --white: #fff;
+  --border: 0.3rem solid white;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+/* Css liên hệ */
+.LienHe {
+  display: flex;
+  justify-content: center;
+}
+
+.contact {
+  padding: 0 1rem 1rem 1rem;
+  border: 0.3rem solid white;
+  border-radius: 4%;
+  background-color: #1f85e8;
+}
+
+.contact .row div form {
+  padding: 1rem;
+  text-align: center;
+  margin: 1rem;
+}
+
+.contact .row form h3 {
+  border-radius: 0.5rem;
+  padding: 1.2rem;
+  color: white;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.contact .row form .box {
+  padding: 1rem 0 0.3rem 0.3rem;
+  margin: 0.4rem 0;
+  border: 1px solid white;
+  font-size: 1.2rem;
+  color: white;
+  background-color: rgb(40 120 202);
+  width: 100%;
+}
+
+.contact .row form .box::placeholder {
+  color: white;
+}
+
+.contact .row form textarea {
+  height: 10rem;
+  color: black;
+  background-color: whitesmoke;
+}
+
+/*  Câu hỏi thường gặp */
+.contact .row .faq .title {
+  font-size: 1.5rem;
+  color: white;
+  text-transform: capitalize;
+  text-align: center;
+  padding: 55px 0 22px 0;
+}
+
+.contact .row .faq .box {
+  padding-bottom: 7px;
+}
+
+.contact .row .faq .box h3 {
+  background-color: #1f66d1;
+  color: white;
+  padding: 1rem;
+  font-size: 1.3rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.contact .row .faq .box h3:hover {
+  background-color: #003b95;
+  color: white;
+}
+
+.contact .row .faq .box p {
+  padding: 1.5rem 2rem;
+  line-height: 2;
+  font-size: 1rem;
+  color: white;
+  display: none;
+}
+
+.contact .row .faq .box.active p {
+  display: inline-block;
+}
+
+/* Hide the default increase and decrease buttons */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*End Css liên hệ */

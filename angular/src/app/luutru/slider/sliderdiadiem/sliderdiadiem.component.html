@@ -1,0 +1,53 @@
+<div class="sliderDiaDiem">
+  <h4 style="text-align: center; padding-bottom: 20px">
+    Các điểm đến thu hút nhất Việt Nam
+  </h4>
+  <div style="width: 100%; height: 200px; margin: 0 auto">
+    <div class="slider">
+      <div
+        (click)="goToPrevious()"
+        class="card flex align-items-center gap-1 cardLeftArrow"
+      >
+        ❰
+      </div>
+
+      <div
+        (click)="goToNext()"
+        class="rightArrow card flex align-items-center gap-1 cardRightArrow"
+      >
+        ❱
+      </div>
+      <div class="slide" *ngFor="let item of [].constructor(6); let i = index">
+        <div
+          (click)="resetTimer()"
+          class="card slide-image"
+          [ngStyle]="{
+            'background-image': getCurrentSlideUrl(
+              (currentIndex + i) % slidesdiadiem.length
+            )
+          }"
+          [routerLink]="[
+            '/app/trangchu',
+            1,
+            slidesdiadiem[(currentIndex + i) % slidesdiadiem.length]?.id
+          ]"
+          style="cursor: pointer"
+        ></div>
+        <div class="slide-content">
+          <h6 class="TenDiaDiem">
+            {{
+              slidesdiadiem[(currentIndex + i) % slidesdiadiem.length]
+                ?.tenDiaDiem
+            }}
+          </h6>
+          <p class="ThongTinViTri">
+            {{
+              slidesdiadiem[(currentIndex + i) % slidesdiadiem.length]
+                ?.thongTinViTri
+            }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

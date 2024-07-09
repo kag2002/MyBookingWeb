@@ -1,0 +1,238 @@
+* {
+  margin-top: 0;
+  padding: 0;
+}
+
+/* TenLoaiDonVi */
+.TenLoaiDonVi {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* HinhThucPhongTitle */
+.HinhThucPhongTitle {
+  color: white;
+  background-color: dodgerblue;
+  border-radius: 14px;
+  padding: 1px 15px;
+  margin-right: 5px;
+}
+
+/* DiaDiem */
+.DiaDiem {
+  font-size: 13px;
+  color: dodgerblue;
+  display: flex;
+}
+.CardRoomDetail {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  position: relative;
+}
+/* Slider */
+.slider {
+  justify-content: center;
+  position: relative;
+}
+
+.slide-main-image,
+.slide-sub-image {
+  width: inherit;
+  background-size: cover;
+  background-position: center;
+}
+
+.slide-main-image {
+  height: 380px;
+  border-radius: 5px;
+}
+
+.slide-sub-image {
+  height: 123px;
+  border-radius: 3px;
+}
+.SubImage {
+  padding: 0 0 5px 5px;
+}
+.show-more-item {
+}
+.show-more-picture {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+.slide-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 14px 30px;
+}
+
+/* DanhGiaPhong */
+.DanhGiaPhong {
+  padding: 14px 40px;
+}
+
+.DanhGiaPhong h6 {
+  color: dodgerblue;
+  font-size: 16px;
+}
+
+.DanhGiaPhong div {
+  font-weight: 600;
+  font-size: 19px;
+  font-weight: 600;
+  color: orange;
+}
+
+/* GiaPhong */
+.GiaPhong {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 0;
+  color: red;
+}
+.GiaPhong h6 {
+  font-weight: 700;
+  font-size: 20px;
+  color: red;
+}
+.col-lg-2.GiaPhong > a.btn {
+  color: white;
+  width: fit-content;
+  padding: 10px;
+  font-weight: 700;
+  background-color: red;
+}
+.col-lg-2.GiaPhong > a.btn:hover {
+  color: white;
+  width: fit-content;
+  padding: 10px;
+  font-weight: 700;
+  background-color: brown;
+}
+/* DetailPhongBottom */
+
+.DetailPhongBottom div p {
+  font-weight: 500;
+  font-size: 19px;
+}
+.DiemNoiBat {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  margin: 50px 0;
+  background-color: white;
+  border-radius: 5px;
+}
+.DiemNoiBat div {
+  text-align: center;
+  padding: 15px 10px 0 10px;
+  font-weight: 600;
+}
+.ThongTinHuuIch {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+.ThongTinHuuIch div div div {
+  margin: 0;
+  padding: 5px;
+}
+.white-background {
+  background-color: white;
+}
+
+.gray-background {
+  background-color: inherit;
+}
+
+.QuyTacChung {
+  margin: 50px 0;
+}
+.QuyTacChung div hr {
+  margin: 0;
+}
+.QuyTacChung div .row {
+  padding: 10px;
+}
+.QuyTacChung div div .col-lg-9 {
+  font-weight: 300;
+}
+.QuyTacChung div .row div i {
+  padding-right: 5px;
+}
+
+.TienIchChung {
+  text-align: center;
+}
+.TienIchChung h5 {
+  margin-bottom: 40px;
+}
+
+.TienIchChungContainer {
+  column-count: 4;
+}
+
+.TienIchChungItem {
+  display: inline-block;
+}
+
+.TienIchChungItem div {
+  font-size: 17px;
+  font-weight: bold;
+  color: orangered;
+}
+.TienIchChungItem ul li {
+  font-size: 16px;
+  color: #793615;
+  list-style: none;
+}
+
+.PhongConTrong {
+  padding: 20px;
+}
+.PhongConTrong h4 {
+  color: orangered;
+  margin-bottom: 42px;
+}
+.PhongConTrongListItem {
+  padding: 0 42px;
+}
+.PhongTrongDetail {
+  padding: 20px;
+}
+.PhongTrongDetail div li {
+  margin-bottom: 20px;
+}
+.DichVuContainer {
+  color: gray;
+}
+.GiaLoaiPhong {
+  font-size: 20px;
+  font-weight: 600;
+  color: red;
+  margin-top: 24px;
+}
+
+.DangKyEmail {
+  background-color: white;
+  padding: 50px;
+}
+.DangKyEmailContainer {
+  display: grid;
+  justify-content: center;
+  padding: 30px;
+  background-color: darkblue;
+  color: white;
+  text-align: center;
+}
+.SubmitEmail {
+  display: flex;
+}
+.SubmitEmail input {
+  margin-right: 20px;
+  text-align: center;
+  width: 400px;
+  height: 50px;
+}

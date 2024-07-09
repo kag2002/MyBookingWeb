@@ -1,0 +1,258 @@
+<div class="container" style="margin-top: 100px">
+  <div style="padding: 20px 7.5px">
+    <h3>Đặt phòng khách sạn</h3>
+    <p>
+      Hãy chắc chắn rằng tất cả thông tin trên trang này là chính xác trước khi
+      tiến hành thanh toán.
+    </p>
+  </div>
+  <div class="row">
+    <div class="col-lg-7">
+      <!-- Card Đăng ký đặt chỗ -->
+      <div class="card DangKyDatCho">
+        <h6>
+          Đăng nhập hoặc Đăng ký và tận hưởng ưu đãi dành riêng cho thành viên
+        </h6>
+        <p>Đặt chỗ nhanh và dễ dàng hơn với Passenger Quick Pick</p>
+      </div>
+
+      <!--End Card Đăng ký đặt chỗ -->
+      <hr />
+      <!-- Form Chi Tiet Lien He  -->
+      <h5>Chi tiết liên hệ (cho Vé điện tử/Phiếu xác nhận)</h5>
+      <form [formGroup]="FormThongTinLienHe" (ngSubmit)="onSubmit()">
+        <div class="card flex FormThongTinLienHe">
+          <div class="col-lg-12" style="display: flex; flex-direction: column">
+            <label for="name">Họ và tên </label>
+            <input
+              type="text"
+              aria-describedby="username-help"
+              pInputText
+              formControlName="name"
+              required
+            />
+            <small
+              style="color: red"
+              *ngIf="
+                !FormThongTinLienHe.get('name').valid &&
+                FormThongTinLienHe.get('name').touched
+              "
+              >Vui lòng nhập tên
+            </small>
+            <small *ngIf="!FormThongTinLienHe.get('name').valid"
+              >Như trên CMND không dấu .</small
+            >
+          </div>
+          <hr />
+          <div class="col-lg-12" style="display: flex; flex-direction: column">
+            <label for="cccd">Số CCCD / Hộ chiếu</label>
+            <input
+              type="text"
+              aria-describedby="cccd-help"
+              pInputText
+              formControlName="cccd"
+              required
+            /><small
+              style="color: red"
+              *ngIf="
+                !FormThongTinLienHe.get('cccd').valid &&
+                FormThongTinLienHe.get('cccd').touched
+              "
+              >Vui lòng nhập cccd hợp lệ gồm 12 số</small
+            >
+            <small *ngIf="!FormThongTinLienHe.get('cccd').valid"
+              >Như trên CMND không dấu .</small
+            >
+          </div>
+          <hr />
+          <div class="row ThongTinLienHe col-lg-12">
+            <div class="col-lg-6">
+              <label for="phone">Số điện thoại</label>
+              <input
+                type="text"
+                aria-describedby="phone-help"
+                pInputText
+                formControlName="phone"
+                required
+              />
+              <small
+                style="color: red"
+                *ngIf="
+                  !FormThongTinLienHe.get('phone').valid &&
+                  FormThongTinLienHe.get('phone').touched
+                "
+                >Vui lòng nhập sđt hợp lệ gồm 10 số</small
+              >
+              <small *ngIf="!FormThongTinLienHe.get('phone').valid"
+                >VD: 0901234567</small
+              >
+            </div>
+
+            <div class="col-lg-6">
+              <label for="email">Email </label>
+              <input
+                type="text"
+                aria-describedby="email-help"
+                pInputText
+                formControlName="email"
+                required
+              />
+              <small
+                style="color: red"
+                *ngIf="
+                  !FormThongTinLienHe.get('email').valid &&
+                  FormThongTinLienHe.get('email').touched
+                "
+                >Vui lòng nhập email hợp lệ dạng email@gmail.com</small
+              >
+              <small *ngIf="!FormThongTinLienHe.get('email').valid"
+                >VD: email@example.com</small
+              >
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div
+              *ngFor="let datho of dathos"
+              class="col-lg-6 field-checkbox DatHoRadio"
+            >
+              <p-radioButton
+                [inputId]="datho.key"
+                [value]="datho"
+                formControlName="datho"
+              ></p-radioButton>
+              <label style="margin: 0" [for]="datho.key" class="ml-2">{{
+                datho.name
+              }}</label>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <!-- <pre>{{ FormThongTinLienHe.value | json }}</pre> -->
+
+      <!--End Form Chi Tiet Lien He  -->
+
+      <!--Form Yêu cầu đặc biệt -->
+      <form [formGroup]="FormYeuCauDacBiet">
+        <h6>Yêu cầu đặc biệt</h6>
+        <div class="card YeuCauDacBiet">
+          <div>
+            Cơ sở lưu trú sẽ cố gắng đáp ứng yêu cầu của bạn dựa trên tình trạng
+            sẵn có. Lưu ý rằng bạn có thể phải trả thêm phí cho một số yêu cầu
+            và bạn không thể sửa yêu cầu sau khi đã gửi.
+          </div>
+          <hr />
+          <div class="row">
+            <div
+              *ngFor="let yeucau of yeucaus"
+              class="col-lg-6 field-checkbox YeuCauDacBietRadio"
+            >
+              <p-radioButton
+                [inputId]="yeucau.key"
+                [value]="yeucau"
+                formControlName="selectedCategory"
+              ></p-radioButton>
+
+              <label [for]="yeucau.key" class="ml-2">{{ yeucau.name }}</label>
+            </div>
+          </div>
+        </div>
+      </form>
+      <!-- <pre>{{ FormYeuCauDacBiet.value | json }}</pre> -->
+      <!-- End yêu cầu đặc biệt -->
+
+      <p-button
+        style="display: contents"
+        label="Đặt phòng"
+        (click)="addClientBookRoom()"
+        styleClass=" p-button-raised p-button-danger"
+        [disabled]="!FormThongTinLienHe.valid"
+        [routerLink]="[
+          '/app/thongtinlienhestart',
+          id,
+          idloaiphong,
+          idloaiphong
+        ]"
+      ></p-button>
+    </div>
+    <div class="col-lg-5">
+      <!-- PhongConTrong -->
+      <div class="PhongConTrong card" id="PhongConTrong">
+        <h4 style="margin-bottom: 20px">
+          {{ selectedloaiphong?.tenDonVi }}
+          <br />
+        </h4>
+        <div class="PhongConTrongList">
+          <div class="PhongConTrongListItem card">
+            <div
+              style="margin-bottom: 10px; font-weight: bold; width: 70%"
+              class="row"
+            >
+              {{ selectedloaiphong?.tenLoaiPhong }}
+            </div>
+
+            <div class="row">
+              <div class="col-lg-7">
+                <img
+                  class="card"
+                  style="max-width: 100%; max-height: fit-content; padding: 2px"
+                  src="../../../assets/img/LoaiPhong/{{
+                    selectedloaiphong?.tenFIleAnh
+                  }}"
+                  alt="Fails"
+                />
+              </div>
+
+              <div class="col-lg-5">
+                <i class="fa-solid fa-bed" style="color: #3b56de"></i>
+                {{ selectedloaiphong?.sucChuaPhong }}người
+                <br />
+
+                <h6
+                  style="color: #00a651; margin-top: 10px"
+                  *ngIf="selectedloaiphong?.mienPhiHuyPhong"
+                >
+                  Miễn phí hủy phòng
+                </h6>
+                <h6
+                  style="color: orange; margin-top: 10px"
+                  *ngIf="!selectedloaiphong?.mienPhiHuyPhong"
+                >
+                  Không miễn phí hủy phòng
+                </h6>
+              </div>
+            </div>
+
+            <div style="margin-top: 10px" class="row">
+              <div class="col-lg-6">
+                <h6>Phòng gồm:</h6>
+                {{ selectedloaiphong?.moTaPhong }}
+              </div>
+              <div class="col-lg-6">
+                <h6 style="margin: 0">Tiện nghi:</h6>
+                {{ selectedloaiphong?.tienNghi }}
+              </div>
+            </div>
+
+            <hr />
+            <div class="row">
+              <div class="col-lg-12">
+                <h5 style="color: red">
+                  Giá :
+                  {{
+                    selectedloaiphong?.giaPhongTheoDem | number : "1.0-0"
+                  }}
+                  VNĐ
+                </h5>
+              </div>
+            </div>
+          </div>
+          <br /><br />
+        </div>
+      </div>
+      <!-- EndPhongConTrong -->
+    </div>
+  </div>
+  <br />
+</div>

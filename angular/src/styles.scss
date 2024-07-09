@@ -1,0 +1,28 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+body {
+  font-family: var(--font-family);
+}
+.p-tabview .p-tabview-panels {
+  padding: 0px !important;
+}
+.p-tabview .p-tabview-nav {
+  display: flex !important;
+  justify-content: center !important;
+}
+.navbar-expand-lg {
+  & .navbar-nav .nav-link {
+    color: white;
+  }
+
+  font-weight: 600;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.p-datatable {
+  padding: 14px !important;
+}
