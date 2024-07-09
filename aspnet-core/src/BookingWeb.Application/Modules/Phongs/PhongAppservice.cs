@@ -641,7 +641,7 @@ namespace BookingWeb.Modules.Phongs
                     using (var smtpClient = new SmtpClient("smtp.gmail.com")) // Chuyển tới Gmail's SMTP server
                     {
                         smtpClient.Port = 587;
-                        smtpClient.Credentials = new NetworkCredential("lethienkhang2002@gmail.com", "hfkinaalbpwwrebr"); // Use your email and app password
+                        smtpClient.Credentials = new NetworkCredential(); //email,key
                         smtpClient.EnableSsl = true;
 
                         var mailMessage = new MailMessage();
